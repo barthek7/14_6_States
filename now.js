@@ -24,6 +24,32 @@ var Counter = React.createClass({
             counter: this.state.counter -1
         });
     },
+    getDefaultProps: function(){
+      console.log('Setting default props values');
+    },
+    componentWillMount: function () {
+       console.log('Right before invoking render');
+
+    },
+    componentDidMount: function () {
+        console.log('Right after render, component present on page');
+    },
+    componentWillReceiveProps: function(nextProps){
+       console.log('When component received new props, new props are: ' + nextProps);
+
+    },
+    shouldComponentUpdate: function (nextProps, nextState) {
+        console.log('Checking if the component should be rendered again with new props/state: ' + nextProps + " state: " + nextState);
+    },
+    componentWillUpdate: function (nextProps, nextState) {
+        console.log('Should update returned true, the component will update...');
+    },
+    componentDidUpdate: function (prevProps, prevState) {
+        console.log('Component updated! You can manipulate the DOM now');
+    },
+    componentWillUnmount: function () {
+        console.log('Cleaning up...');
+    }
 });
 
 var counter1 = React.createElement(Counter);
