@@ -40,9 +40,11 @@ var Counter = React.createClass({
     },
     shouldComponentUpdate: function (nextProps, nextState) {
         console.log('Checking if the component should be rendered again with new props/state: ' + nextProps + " state: " + nextState);
+        return true;
     },
     componentWillUpdate: function (nextProps, nextState) {
         console.log('Should update returned true, the component will update...');
+        return true;
     },
     componentDidUpdate: function (prevProps, prevState) {
         console.log('Component updated! You can manipulate the DOM now');
